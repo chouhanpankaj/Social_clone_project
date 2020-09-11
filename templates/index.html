@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Home</title>{% endblock %}
-</head>
-<body>
-    {% block content %}
-    
-    {% endblock %}
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to hompage</h1>
+
+{% endblock %}

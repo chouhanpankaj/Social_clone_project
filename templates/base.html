@@ -4,10 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,200&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{% static 'social_clone/css/master.css' %}">
     {% block title %}{% endblock %}
 </head>
 <body>
-    {% block content %} {% endblock %}
+    <nav class="navbar navbar-inverse mynav" role="navigation" id="navbar">
+        <div class="container">
+            <ul class="navbar navbar-nav">
+                <a class="navbar-brand mynav" href="{% url 'home' %}" >Social Clone</a>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a href="#">Posts</a></li>
+                <li><a href="#">Group</a>s</li>
+                <li><a href="#">Create Group</a></li>
+                <li><a href="{% url 'accounts:logout'%}">LogOut</a></li>
+                {% else %}
+                <li><a href="#">Groups</a></li>
+                <li><a href="{% url 'accounts:login' %}">LogIn</a></li>
+                <li><a href="{% url 'accounts:signup' %}">SignUp</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mycontent">
+        {% block content %} {% endblock %}
+
+    </div>
     
 </body>
 </html>
