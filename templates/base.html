@@ -13,7 +13,7 @@
     {% block title %}{% endblock %}
 </head>
 <body>
-    <nav class="navbar navbar-inverse mynav" role="navigation" id="navbar">
+    <nav class="navbar mynav" role="navigation" id="navbar">
         <div class="container">
             <ul class="navbar navbar-nav">
                 <a class="navbar-brand mynav" href="{% url 'home' %}" >Social Clone</a>
@@ -21,13 +21,13 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                 <li><a href="#">Posts</a></li>
-                <li><a href="#">Group</a>s</li>
+                <li><a href="#">Groups</a></li>
                 <li><a href="#">Create Group</a></li>
-                <li><a href="{% url 'accounts:logout'%}">LogOut</a></li>
+                <li><a href="{% url 'logout'%}">LogOut</a></li>
                 {% else %}
                 <li><a href="#">Groups</a></li>
-                <li><a href="{% url 'accounts:login' %}">LogIn</a></li>
-                <li><a href="{% url 'accounts:signup' %}">SignUp</a></li>
+                <li><a href="{% url 'login' %}">LogIn</a></li>
+                <li><a href="{% url 'signup' %}">SignUp</a></li>
                 {% endif %}
             </ul>
         </div>
