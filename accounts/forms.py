@@ -12,6 +12,6 @@ class UserCreateForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        # for customized label
+        # for customized form label
         self.fields['username'].label = 'Display name'
         self.fields['email'].label = 'Email address'
